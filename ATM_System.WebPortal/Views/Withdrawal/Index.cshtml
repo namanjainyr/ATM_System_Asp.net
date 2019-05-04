@@ -1,0 +1,42 @@
+﻿@model ATM_System.Entity.Models.WithdrawDetails
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Please select Account type</h2>
+
+@if (Session["User"] == null)
+{
+    Response.Redirect("~/Login/Index");
+}
+else
+{
+
+    <br/>
+    
+
+    using (Html.BeginForm("withdraw", "Withdrawal", FormMethod.Post))
+     {
+      
+    <div class="form-group">
+        @Html.TextBoxFor(model => model.Username, new { @readonly = true })
+        <br/>
+        <br/>
+        @Html.LabelFor(model => Model.Amount, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.TextBoxFor(m => Model.Amount)
+
+        <br />
+        @Html.LabelFor(model => Model.AccountType, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            Current
+            @Html.RadioButtonFor(model => Model.AccountType, "Current")
+            Savings
+            @Html.RadioButtonFor(model => Model.AccountType, "Savings")
+        </div>
+    </div>  
+
+         <input type="submit" value="Proceed" />
+     }
+}
+

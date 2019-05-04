@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "CardNotFound";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Your card is not valid.</h2>
+
+<br>
+<br/>
+
+<p>You may follow below options:</p>
+<ul>
+    <li>Insert your card again <button onclick="location.href='@Url.Action("Index", "Login")';return false;">Login Page</button></li>
+    <li>Reach out to our customer care <a>support@honeywell.com</a></li>
+</ul>
+

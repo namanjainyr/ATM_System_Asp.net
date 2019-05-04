@@ -1,0 +1,18 @@
+[
+  {
+    "Username": "Naman",
+    "TotalBalance": 86225,
+    "UserType": "Normal",
+    "ExpiryDate": "0620",
+    "Pin": 7777,
+    "IsLost": true
+  },
+  {
+    "Username": "John",
+    "TotalBalance": "50000",
+    "UserType": "Admin",
+    "ExpiryDate": "0620",
+    "Pin": 7777,
+    "IsLost": false
+  }
+]

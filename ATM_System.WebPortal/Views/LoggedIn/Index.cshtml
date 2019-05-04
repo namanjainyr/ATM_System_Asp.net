@@ -1,0 +1,50 @@
+﻿@model ATM_System.Entity.Models.CardDetails
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Welcome to Home Page!</h2>
+
+<hr />
+<br />
+@if (Session["User"] == null)
+{
+     Response.Redirect("~/Login/Index");
+}
+else
+{
+    <ul>
+        <li>
+            @Html.ActionLink("Money Withdrawal", // <-- Link text
+                "Index", // <-- Action Method Name
+                "Withdrawal", // <-- Controller Name
+                new {username = Model.Username}, // <-- Route value
+                null // <-- htmlArguments
+                )
+        </li>
+
+        <li>
+            @Html.ActionLink("Balance Enquiry", // <-- Link text
+                "Index", // <-- Action Method Name
+                "CheckBalance", // <-- Controller Name
+                new {username = Model.Username}, // <-- Route value
+                null // <-- htmlArguments
+                )
+        </li>
+
+
+        <li>
+            @Html.ActionLink("Pin Change", // <-- Link text
+                "Index", // <-- Action Method Name
+                "ChangePin", // <-- Controller Name
+                new { username = Model.Username , pin = Model.Pin}, // <-- Route value
+                null // <-- htmlArguments
+                )
+        </li>
+
+
+    </ul>
+}
+
+

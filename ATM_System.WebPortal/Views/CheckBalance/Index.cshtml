@@ -1,0 +1,18 @@
+﻿@model ATM_System.Entity.Models.CardDetails
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (Session["User"] == null)
+{
+    Response.Redirect("~/Login/Index");
+}
+else
+{
+    <h2>Please find your details below:</h2>
+    <br/>
+    <p>UserName: @Model.Username</p>
+    <p>Current Balance: @Model.TotalBalance</p>
+}
+

@@ -1,0 +1,10 @@
+﻿@model ATM_System.Entity.Models.CardDetails
+@{
+    ViewBag.Title = "withdraw";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Money is deducted from your account successfully! Please collect your money.</h2>
+
+<h4>UserName: @Model.Username</h4>
+<h4>Current Balance: @Model.TotalBalance</h4>
